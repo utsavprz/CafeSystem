@@ -89,6 +89,7 @@ public class CafeHome {
 		frame.setBounds(200, 100, 1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle("Cafe System");
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(10, 70, 561, 380);
@@ -97,6 +98,7 @@ public class CafeHome {
 		panel.setLayout(null);
 		
 		textField = new JTextField();
+		textField.setEnabled(false);
 		
 		textField.addKeyListener(new KeyAdapter() {
 			@Override
@@ -116,6 +118,7 @@ public class CafeHome {
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
+		textField_1.setEnabled(false);
 		textField_1.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -133,6 +136,7 @@ public class CafeHome {
 		panel.add(textField_1);
 		
 		textField_2 = new JTextField();
+		textField_2.setEnabled(false);
 		textField_2.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -150,6 +154,7 @@ public class CafeHome {
 		panel.add(textField_2);
 		
 		textField_3 = new JTextField();
+		textField_3.setEnabled(false);
 		textField_3.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -167,6 +172,7 @@ public class CafeHome {
 		panel.add(textField_3);
 		
 		textField_4 = new JTextField();
+		textField_4.setEnabled(false);
 		textField_4.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -184,6 +190,7 @@ public class CafeHome {
 		panel.add(textField_4);
 		
 		textField_5 = new JTextField();
+		textField_5.setEnabled(false);
 		textField_5.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -201,6 +208,7 @@ public class CafeHome {
 		panel.add(textField_5);
 		
 		textField_6 = new JTextField();
+		textField_6.setEnabled(false);
 		textField_6.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -218,6 +226,7 @@ public class CafeHome {
 		panel.add(textField_6);
 		
 		textField_7 = new JTextField();
+		textField_7.setEnabled(false);
 		textField_7.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -235,6 +244,7 @@ public class CafeHome {
 		panel.add(textField_7);
 		
 		textField_8 = new JTextField();
+		textField_8.setEnabled(false);
 		textField_8.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -252,6 +262,7 @@ public class CafeHome {
 		panel.add(textField_8);
 		
 		textField_9 = new JTextField();
+		textField_9.setEnabled(false);
 		textField_9.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -269,6 +280,7 @@ public class CafeHome {
 		panel.add(textField_9);
 		
 		textField_10 = new JTextField();
+		textField_10.setEnabled(false);
 		textField_10.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -286,6 +298,7 @@ public class CafeHome {
 		panel.add(textField_10);
 		
 		textField_11 = new JTextField();
+		textField_11.setEnabled(false);
 		textField_11.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -303,6 +316,7 @@ public class CafeHome {
 		panel.add(textField_11);
 		
 		textField_12 = new JTextField();
+		textField_12.setEnabled(false);
 		textField_12.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -320,6 +334,7 @@ public class CafeHome {
 		panel.add(textField_12);
 		
 		textField_13 = new JTextField();
+		textField_13.setEnabled(false);
 		textField_13.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -337,71 +352,234 @@ public class CafeHome {
 		panel.add(textField_13);
 		
 		JCheckBox chckbx = new JCheckBox("Chicken Burger");
+		chckbx.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx.isSelected()) {
+					textField.setEnabled(true);
+				}else {
+					textField.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx.setBounds(10, 14, 166, 42);
 		panel.add(chckbx);
 		
 		JCheckBox chckbx_2 = new JCheckBox("Ham Burger");
+		chckbx_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chckbx_2.isSelected()) {
+					textField_1.setEnabled(true);
+				}else {
+					textField_1.setEnabled(false);
+				}
+			}
+		});
 		chckbx_2.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_2.setBounds(10, 66, 166, 42);
 		panel.add(chckbx_2);
 		
 		JCheckBox chckbx_3 = new JCheckBox("Chesse Burger");
+		chckbx_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_3.isSelected()) {
+					textField_2.setEnabled(true);
+				}else {
+					textField_2.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_3.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_3.setBounds(10, 119, 166, 42);
 		panel.add(chckbx_3);
 		
 		JCheckBox chckbx_5 = new JCheckBox("Steak Burger");
+		chckbx_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_5.isSelected()) {
+					textField_5.setEnabled(true);
+				}else {
+					textField_5.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_5.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_5.setBounds(10, 171, 166, 42);
 		panel.add(chckbx_5);
 		
 		JCheckBox chckbx_4 = new JCheckBox("Pork Burrito");
+		chckbx_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_4.isSelected()) {
+					textField_6.setEnabled(true);
+				}else {
+					textField_6.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_4.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_4.setBounds(10, 330, 166, 42);
 		panel.add(chckbx_4);
 		
 		JCheckBox chckbx_7 = new JCheckBox("Shrimp Burrito");
+		chckbx_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_7.isSelected()) {
+					textField_3.setEnabled(true);
+				}else {
+					textField_3.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_7.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_7.setBounds(10, 275, 166, 42);
 		panel.add(chckbx_7);
 		
 		JCheckBox chckbx_6 = new JCheckBox("Chicken Burrito");
+		chckbx_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_6.isSelected()) {
+					textField_4.setEnabled(true);
+				}else {
+					textField_4.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_6.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_6.setBounds(10, 224, 166, 42);
 		panel.add(chckbx_6);
 		
 		JCheckBox chckbx_8 = new JCheckBox("Margherita Pizza");
+		chckbx_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_8.isSelected()) {
+					textField_7.setEnabled(true);
+				}else {
+					textField_7.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_8.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_8.setBounds(290, 14, 166, 42);
 		panel.add(chckbx_8);
 		
 		JCheckBox chckbx_9 = new JCheckBox("Hawaiian Pizza");
+		chckbx_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_9.isSelected()) {
+					textField_8.setEnabled(true);
+				}else {
+					textField_8.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_9.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_9.setBounds(290, 66, 166, 42);
 		panel.add(chckbx_9);
 		
 		JCheckBox chckbx_10 = new JCheckBox("BBQ Bacon Pizza");
+		chckbx_10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_10.isSelected()) {
+					textField_9.setEnabled(true);
+				}else {
+					textField_9.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_10.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_10.setBounds(290, 119, 166, 42);
 		panel.add(chckbx_10);
 		
 		JCheckBox chckbx_11 = new JCheckBox("Mix Pizza");
+		chckbx_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_11.isSelected()) {
+					textField_10.setEnabled(true);
+				}else {
+					textField_10.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_11.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_11.isSelected()) {
+					textField_10.setEnabled(true);
+				}else {
+					textField_10.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_11.setBounds(290, 171, 166, 42);
 		panel.add(chckbx_11);
 		
 		JCheckBox chckbx_12 = new JCheckBox("Saucy Wings");
+		chckbx_12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_12.isSelected()) {
+					textField_11.setEnabled(true);
+				}else {
+					textField_11.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_12.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_12.setBounds(290, 224, 166, 42);
 		panel.add(chckbx_12);
 		
 		JCheckBox chckbx_13 = new JCheckBox("Kids Meal");
+		chckbx_13.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_13.isSelected()) {
+					textField_12.setEnabled(true);
+				}else {
+					textField_12.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_13.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_13.setBounds(290, 275, 166, 42);
 		panel.add(chckbx_13);
 		
 		JCheckBox chckbx_14 = new JCheckBox("Chicken Nugget");
+		chckbx_14.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_14.isSelected()) {
+					textField_13.setEnabled(true);
+				}else {
+					textField_13.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_14.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_14.setBounds(290, 330, 166, 42);
 		panel.add(chckbx_14);
@@ -413,6 +591,7 @@ public class CafeHome {
 		panel_1.setLayout(null);
 		
 		textField_14 = new JTextField();
+		textField_14.setEnabled(false);
 		textField_14.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -430,6 +609,7 @@ public class CafeHome {
 		panel_1.add(textField_14);
 		
 		textField_15 = new JTextField();
+		textField_15.setEnabled(false);
 		textField_15.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -447,6 +627,7 @@ public class CafeHome {
 		panel_1.add(textField_15);
 		
 		textField_16 = new JTextField();
+		textField_16.setEnabled(false);
 		textField_16.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -464,6 +645,7 @@ public class CafeHome {
 		panel_1.add(textField_16);
 		
 		textField_17 = new JTextField();
+		textField_17.setEnabled(false);
 		textField_17.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -481,6 +663,7 @@ public class CafeHome {
 		panel_1.add(textField_17);
 		
 		textField_18 = new JTextField();
+		textField_18.setEnabled(false);
 		textField_18.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -498,6 +681,7 @@ public class CafeHome {
 		panel_1.add(textField_18);
 		
 		textField_19 = new JTextField();
+		textField_19.setEnabled(false);
 		textField_19.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -515,6 +699,7 @@ public class CafeHome {
 		panel_1.add(textField_19);
 		
 		textField_20 = new JTextField();
+		textField_20.setEnabled(false);
 		textField_20.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
@@ -532,36 +717,113 @@ public class CafeHome {
 		panel_1.add(textField_20);
 		
 		JCheckBox chckbx_15 = new JCheckBox("Cappuccino");
+		chckbx_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_15.isSelected()) {
+					textField_14.setEnabled(true);
+				}else {
+					textField_14.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_15.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_15.setBounds(26, 12, 166, 42);
 		panel_1.add(chckbx_15);
 		
 		JCheckBox chckbx_16 = new JCheckBox("Americano");
+		chckbx_16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_16.isSelected()) {
+					textField_15.setEnabled(true);
+				}else {
+					textField_15.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_16.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_16.setBounds(26, 64, 166, 42);
 		panel_1.add(chckbx_16);
 		
 		JCheckBox chckbx_17 = new JCheckBox("Espresso");
+		chckbx_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_17.isSelected()) {
+					textField_16.setEnabled(true);
+				}else {
+					textField_16.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_17.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_17.setBounds(26, 117, 166, 42);
 		panel_1.add(chckbx_17);
 		
 		JCheckBox chckbx_18 = new JCheckBox("Latte");
+		chckbx_18.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_18.isSelected()) {
+					textField_17.setEnabled(true);
+				}else {
+					textField_17.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_18.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_18.setBounds(26, 169, 166, 42);
 		panel_1.add(chckbx_18);
 		
 		JCheckBox chckbx_19 = new JCheckBox("Ice Latte");
+		chckbx_19.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_19.isSelected()) {
+					textField_18.setEnabled(true);
+				}else {
+					textField_18.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_19.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_19.setBounds(26, 222, 166, 42);
 		panel_1.add(chckbx_19);
 		
 		JCheckBox chckbx_20 = new JCheckBox("Mocha");
+		chckbx_20.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_20.isSelected()) {
+					textField_19.setEnabled(true);
+				}else {
+					textField_19.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_20.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_20.setBounds(26, 273, 166, 42);
 		panel_1.add(chckbx_20);
 		
 		JCheckBox chckbx_21 = new JCheckBox("Flat White");
+		chckbx_21.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_21.isSelected()) {
+					textField_20.setEnabled(true);
+				}else {
+					textField_20.setEnabled(false);
+				}
+				
+			}
+		});
 		chckbx_21.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		chckbx_21.setBounds(26, 328, 166, 42);
 		panel_1.add(chckbx_21);
