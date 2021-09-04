@@ -1,0 +1,804 @@
+package com.cafeSystem;
+
+import java.awt.EventQueue;
+
+import java.util.stream.*;
+import java.lang.Double;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.JInternalFrame;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.JSplitPane;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
+import javax.swing.border.SoftBevelBorder;
+
+import java.util.Arrays;
+
+import javax.swing.border.BevelBorder;
+import java.awt.Cursor;
+import javax.swing.border.EtchedBorder;
+import javax.swing.UIManager;
+import javax.swing.JTabbedPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+public class CafeHome {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
+	private JTextField textField_20;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					CafeHome window = new CafeHome();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public CafeHome() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setResizable(false);
+		frame.setBounds(200, 100, 1280, 720);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 70, 561, 380);
+		panel.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		textField = new JTextField();
+		
+		textField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setBounds(182, 19, 86, 32);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_1.setColumns(10);
+		textField_1.setBounds(182, 73, 86, 32);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_2.setColumns(10);
+		textField_2.setBounds(182, 126, 86, 32);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_3.setColumns(10);
+		textField_3.setBounds(182, 285, 86, 32);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_4.setColumns(10);
+		textField_4.setBounds(182, 232, 86, 32);
+		panel.add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_5.setColumns(10);
+		textField_5.setBounds(182, 179, 86, 32);
+		panel.add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_6.setColumns(10);
+		textField_6.setBounds(182, 338, 86, 32);
+		panel.add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_7.setColumns(10);
+		textField_7.setBounds(465, 19, 86, 32);
+		panel.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_8.setColumns(10);
+		textField_8.setBounds(465, 73, 86, 32);
+		panel.add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_9.setColumns(10);
+		textField_9.setBounds(465, 126, 86, 32);
+		panel.add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_10.setColumns(10);
+		textField_10.setBounds(465, 179, 86, 32);
+		panel.add(textField_10);
+		
+		textField_11 = new JTextField();
+		textField_11.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_11.setColumns(10);
+		textField_11.setBounds(465, 232, 86, 32);
+		panel.add(textField_11);
+		
+		textField_12 = new JTextField();
+		textField_12.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_12.setColumns(10);
+		textField_12.setBounds(465, 285, 86, 32);
+		panel.add(textField_12);
+		
+		textField_13 = new JTextField();
+		textField_13.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_13.setColumns(10);
+		textField_13.setBounds(465, 338, 86, 32);
+		panel.add(textField_13);
+		
+		JCheckBox chckbx = new JCheckBox("Chicken Burger");
+		chckbx.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx.setBounds(10, 14, 166, 42);
+		panel.add(chckbx);
+		
+		JCheckBox chckbx_2 = new JCheckBox("Ham Burger");
+		chckbx_2.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_2.setBounds(10, 66, 166, 42);
+		panel.add(chckbx_2);
+		
+		JCheckBox chckbx_3 = new JCheckBox("Chesse Burger");
+		chckbx_3.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_3.setBounds(10, 119, 166, 42);
+		panel.add(chckbx_3);
+		
+		JCheckBox chckbx_5 = new JCheckBox("Steak Burger");
+		chckbx_5.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_5.setBounds(10, 171, 166, 42);
+		panel.add(chckbx_5);
+		
+		JCheckBox chckbx_4 = new JCheckBox("Pork Burrito");
+		chckbx_4.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_4.setBounds(10, 330, 166, 42);
+		panel.add(chckbx_4);
+		
+		JCheckBox chckbx_7 = new JCheckBox("Shrimp Burrito");
+		chckbx_7.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_7.setBounds(10, 275, 166, 42);
+		panel.add(chckbx_7);
+		
+		JCheckBox chckbx_6 = new JCheckBox("Chicken Burrito");
+		chckbx_6.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_6.setBounds(10, 224, 166, 42);
+		panel.add(chckbx_6);
+		
+		JCheckBox chckbx_8 = new JCheckBox("Margherita Pizza");
+		chckbx_8.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_8.setBounds(290, 14, 166, 42);
+		panel.add(chckbx_8);
+		
+		JCheckBox chckbx_9 = new JCheckBox("Hawaiian Pizza");
+		chckbx_9.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_9.setBounds(290, 66, 166, 42);
+		panel.add(chckbx_9);
+		
+		JCheckBox chckbx_10 = new JCheckBox("BBQ Bacon Pizza");
+		chckbx_10.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_10.setBounds(290, 119, 166, 42);
+		panel.add(chckbx_10);
+		
+		JCheckBox chckbx_11 = new JCheckBox("Mix Pizza");
+		chckbx_11.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_11.setBounds(290, 171, 166, 42);
+		panel.add(chckbx_11);
+		
+		JCheckBox chckbx_12 = new JCheckBox("Saucy Wings");
+		chckbx_12.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_12.setBounds(290, 224, 166, 42);
+		panel.add(chckbx_12);
+		
+		JCheckBox chckbx_13 = new JCheckBox("Kids Meal");
+		chckbx_13.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_13.setBounds(290, 275, 166, 42);
+		panel.add(chckbx_13);
+		
+		JCheckBox chckbx_14 = new JCheckBox("Chicken Nugget");
+		chckbx_14.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_14.setBounds(290, 330, 166, 42);
+		panel.add(chckbx_14);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(581, 70, 350, 380);
+		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
+		
+		textField_14 = new JTextField();
+		textField_14.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_14.setColumns(10);
+		textField_14.setBounds(219, 19, 86, 32);
+		panel_1.add(textField_14);
+		
+		textField_15 = new JTextField();
+		textField_15.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_15.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_15.setColumns(10);
+		textField_15.setBounds(219, 73, 86, 32);
+		panel_1.add(textField_15);
+		
+		textField_16 = new JTextField();
+		textField_16.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_16.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_16.setColumns(10);
+		textField_16.setBounds(219, 126, 86, 32);
+		panel_1.add(textField_16);
+		
+		textField_17 = new JTextField();
+		textField_17.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_17.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_17.setColumns(10);
+		textField_17.setBounds(219, 179, 86, 32);
+		panel_1.add(textField_17);
+		
+		textField_18 = new JTextField();
+		textField_18.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_18.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_18.setColumns(10);
+		textField_18.setBounds(219, 232, 86, 32);
+		panel_1.add(textField_18);
+		
+		textField_19 = new JTextField();
+		textField_19.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_19.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_19.setColumns(10);
+		textField_19.setBounds(219, 285, 86, 32);
+		panel_1.add(textField_19);
+		
+		textField_20 = new JTextField();
+		textField_20.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char iNumber = e.getKeyChar();
+				if (!(Character.isDigit(iNumber))
+					||(iNumber == KeyEvent.VK_BACK_SPACE)
+						||(iNumber == KeyEvent.VK_DELETE)){
+			e.consume();
+		}
+			}
+		});
+		textField_20.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_20.setColumns(10);
+		textField_20.setBounds(219, 338, 86, 32);
+		panel_1.add(textField_20);
+		
+		JCheckBox chckbx_15 = new JCheckBox("Cappuccino");
+		chckbx_15.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_15.setBounds(26, 12, 166, 42);
+		panel_1.add(chckbx_15);
+		
+		JCheckBox chckbx_16 = new JCheckBox("Americano");
+		chckbx_16.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_16.setBounds(26, 64, 166, 42);
+		panel_1.add(chckbx_16);
+		
+		JCheckBox chckbx_17 = new JCheckBox("Espresso");
+		chckbx_17.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_17.setBounds(26, 117, 166, 42);
+		panel_1.add(chckbx_17);
+		
+		JCheckBox chckbx_18 = new JCheckBox("Latte");
+		chckbx_18.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_18.setBounds(26, 169, 166, 42);
+		panel_1.add(chckbx_18);
+		
+		JCheckBox chckbx_19 = new JCheckBox("Ice Latte");
+		chckbx_19.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_19.setBounds(26, 222, 166, 42);
+		panel_1.add(chckbx_19);
+		
+		JCheckBox chckbx_20 = new JCheckBox("Mocha");
+		chckbx_20.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_20.setBounds(26, 273, 166, 42);
+		panel_1.add(chckbx_20);
+		
+		JCheckBox chckbx_21 = new JCheckBox("Flat White");
+		chckbx_21.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		chckbx_21.setBounds(26, 328, 166, 42);
+		panel_1.add(chckbx_21);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(10, 461, 281, 146);
+		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		frame.getContentPane().add(panel_2);
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_1_9 = new JLabel("Cost of Meal");
+		lblNewLabel_1_9.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9.setBounds(10, 32, 150, 31);
+		panel_2.add(lblNewLabel_1_9);
+		
+		JLabel jblCostOfMeal = new JLabel("");
+		jblCostOfMeal.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfMeal.setBackground(Color.WHITE);
+		jblCostOfMeal.setBorder(new LineBorder(Color.DARK_GRAY, 2));
+		jblCostOfMeal.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfMeal.setBounds(181, 32, 86, 31);
+		panel_2.add(jblCostOfMeal);
+		
+		JLabel lblNewLabel_1_9_1 = new JLabel("Cost of Drinks");
+		lblNewLabel_1_9_1.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9_1.setBounds(10, 86, 150, 31);
+		panel_2.add(lblNewLabel_1_9_1);
+		
+		JLabel jblCostOfDrinks = new JLabel("");
+		jblCostOfDrinks.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfDrinks.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfDrinks.setBorder(new LineBorder(Color.DARK_GRAY, 2));
+		jblCostOfDrinks.setBackground(Color.WHITE);
+		jblCostOfDrinks.setBounds(181, 86, 86, 31);
+		panel_2.add(jblCostOfDrinks);
+		
+		JPanel panel_2_2 = new JPanel();
+		panel_2_2.setLayout(null);
+		panel_2_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		panel_2_2.setBounds(301, 461, 270, 146);
+		frame.getContentPane().add(panel_2_2);
+		
+		JLabel jblCostOfDelivery = new JLabel("");
+		jblCostOfDelivery.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfDelivery.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfDelivery.setBorder(new LineBorder(Color.DARK_GRAY, 2));
+		jblCostOfDelivery.setBackground(Color.WHITE);
+		jblCostOfDelivery.setBounds(174, 86, 86, 32);
+		panel_2_2.add(jblCostOfDelivery);
+		
+		JPanel panel_2_1 = new JPanel();
+		panel_2_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		panel_2_1.setBounds(581, 461, 350, 208);
+		frame.getContentPane().add(panel_2_1);
+		panel_2_1.setLayout(null);
+		
+		JButton btnNewButton = new JButton("Total");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+
+				
+				
+				
+			}
+
+
+		});
+		btnNewButton.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnNewButton.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton.setBackground(new Color(153, 255, 102));
+		btnNewButton.setBounds(50, 53, 103, 33);
+		panel_2_1.add(btnNewButton);
+		
+		JButton btnReceipt = new JButton("Receipt");
+		btnReceipt.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnReceipt.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnReceipt.setBackground(new Color(153, 255, 102));
+		btnReceipt.setBounds(203, 53, 103, 33);
+		panel_2_1.add(btnReceipt);
+		
+		JCheckBox chckbxDelivery = new JCheckBox("");
+		chckbxDelivery.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				jblCostOfDelivery.setText("120");
+				
+			}
+		});
+		chckbxDelivery.setBounds(206, 32, 21, 31);
+		panel_2_2.add(chckbxDelivery);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		panel_4.setBounds(10, 618, 561, 51);
+		frame.getContentPane().add(panel_4);
+		panel_4.setLayout(null);
+
+		JLabel jblTotal = new JLabel("");
+		jblTotal.setBounds(297, 11, 123, 31);
+		panel_4.add(jblTotal);
+		jblTotal.setHorizontalAlignment(SwingConstants.CENTER);
+		jblTotal.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblTotal.setBorder(new LineBorder(Color.DARK_GRAY, 2));
+		jblTotal.setBackground(Color.WHITE);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "CafeSystem",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+					System.exit(0);
+				}
+				
+			}
+		});
+		btnExit.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnExit.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnExit.setBackground(new Color(255, 51, 51));
+		btnExit.setBounds(203, 111, 103, 33);
+		panel_2_1.add(btnExit);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textField.setText(null);
+				textField_1.setText(null);
+				textField_2.setText(null);
+				textField_3.setText(null);
+				textField_4.setText(null);
+				textField_5.setText(null);
+				textField_6.setText(null);
+				textField_7.setText(null);
+				textField_8.setText(null);
+				textField_9.setText(null);
+				textField_10.setText(null);
+				textField_11.setText(null);
+				textField_12.setText(null);
+				textField_13.setText(null);
+				textField_14.setText(null);
+				textField_15.setText(null);
+				textField_16.setText(null);
+				textField_17.setText(null);
+				textField_18.setText(null);
+				textField_19.setText(null);
+				textField_20.setText(null);
+				
+				jblCostOfMeal.setText(null);
+				jblCostOfDrinks.setText(null);
+				jblCostOfDelivery.setText(null);
+				jblTotal.setText(null);
+				
+				chckbx.setSelected(false);
+				chckbx_2.setSelected(false);
+				chckbx_3.setSelected(false);
+				chckbx_4.setSelected(false);
+				chckbx_5.setSelected(false);
+				chckbx_6.setSelected(false);
+				chckbx_7.setSelected(false);
+				chckbx_8.setSelected(false);
+				chckbx_9.setSelected(false);
+				chckbx_10.setSelected(false);
+				chckbx_11.setSelected(false);
+				chckbx_12.setSelected(false);
+				chckbx_13.setSelected(false);
+				chckbx_14.setSelected(false);
+				chckbx_15.setSelected(false);
+				chckbx_16.setSelected(false);
+				chckbx_17.setSelected(false);
+				chckbx_18.setSelected(false);
+				chckbx_19.setSelected(false);
+				chckbx_20.setSelected(false);
+				chckbx_21.setSelected(false);
+				chckbxDelivery.setSelected(false);
+				
+				
+				
+				
+				
+			}
+		});
+		btnReset.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnReset.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnReset.setBackground(new Color(153, 255, 102));
+		btnReset.setBounds(50, 111, 103, 33);
+		panel_2_1.add(btnReset);
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBounds(941, 70, 323, 599);
+		panel_1_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		frame.getContentPane().add(panel_1_1);
+		panel_1_1.setLayout(null);
+		
+		JLabel lblNewLabel_3 = new JLabel("Receipt");
+		lblNewLabel_3.setBounds(113, 22, 103, 24);
+		lblNewLabel_3.setFont(new Font("Montserrat", Font.BOLD, 20));
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		panel_1_1.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel = new JLabel("CafeSystem");
+		lblNewLabel.setBounds(10, 0, 1254, 59);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Montserrat", Font.BOLD, 31));
+		frame.getContentPane().add(lblNewLabel);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(0, 0, 1274, 59);
+		panel_3.setBackground(Color.DARK_GRAY);
+		frame.getContentPane().add(panel_3);
+		
+
+		
+		JLabel lblNewLabel_1_9_1_1 = new JLabel("Total");
+		lblNewLabel_1_9_1_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel_1_9_1_1.setBounds(208, 11, 69, 31);
+		panel_4.add(lblNewLabel_1_9_1_1);
+		lblNewLabel_1_9_1_1.setFont(new Font("Montserrat", Font.BOLD, 18));
+		
+
+		
+
+		
+		JLabel lblNewLabel_1_9_2 = new JLabel("Home Delivery");
+		lblNewLabel_1_9_2.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9_2.setBounds(22, 32, 139, 31);
+		panel_2_2.add(lblNewLabel_1_9_2);
+		
+		JLabel lblNewLabel_1_9_1_2 = new JLabel("Delivery Cost");
+		lblNewLabel_1_9_1_2.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9_1_2.setBounds(22, 87, 150, 31);
+		panel_2_2.add(lblNewLabel_1_9_1_2);
+		
+
+		
+
+	}
+}
