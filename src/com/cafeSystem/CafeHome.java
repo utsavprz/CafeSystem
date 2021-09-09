@@ -1577,7 +1577,7 @@ public class CafeHome {
         LocalTime localTime = LocalTime.now();
         String timeCur = dtfa.format(localTime);
 		
-		
+	
 		
 		btnAdd = new JButton("Order");
 		btnAdd.addActionListener(new ActionListener() {
