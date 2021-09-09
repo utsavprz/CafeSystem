@@ -33,6 +33,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JSeparator;
 import javax.swing.border.CompoundBorder;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.JScrollBar;
 
 public class CafeHome {
 
@@ -122,18 +125,18 @@ public class CafeHome {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(200, 100, 957, 717);
+		frame.setBounds(200, 100, 1336, 718);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Cafe System");
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 70, 561, 380);
+		panel.setBounds(10, 70, 561, 599);
 		panel.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
 		frame.getContentPane().add(panel);
-		panel.setLayout(null);
 		
 		textField = new JTextField();
+		textField.setBounds(182, 19, 86, 32);
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField.setText("0");
 		textField.setEnabled(false);
@@ -149,13 +152,14 @@ public class CafeHome {
 		}
 			}
 		});
+		panel.setLayout(null);
 		
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBounds(182, 19, 86, 32);
 		panel.add(textField);
 		textField.setColumns(10);
 		
 		textField_1 = new JTextField();
+		textField_1.setBounds(182, 73, 86, 32);
 		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_1.setText("0");
 		textField_1.setEnabled(false);
@@ -172,10 +176,10 @@ public class CafeHome {
 		});
 		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_1.setColumns(10);
-		textField_1.setBounds(182, 73, 86, 32);
 		panel.add(textField_1);
 		
 		textField_2 = new JTextField();
+		textField_2.setBounds(182, 126, 86, 32);
 		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_2.setText("0");
 		textField_2.setEnabled(false);
@@ -192,10 +196,10 @@ public class CafeHome {
 		});
 		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_2.setColumns(10);
-		textField_2.setBounds(182, 126, 86, 32);
 		panel.add(textField_2);
 		
 		textField_3 = new JTextField();
+		textField_3.setBounds(182, 285, 86, 32);
 		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_3.setText("0");
 		textField_3.setEnabled(false);
@@ -212,10 +216,10 @@ public class CafeHome {
 		});
 		textField_3.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_3.setColumns(10);
-		textField_3.setBounds(182, 285, 86, 32);
 		panel.add(textField_3);
 		
 		textField_4 = new JTextField();
+		textField_4.setBounds(182, 232, 86, 32);
 		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_4.setText("0");
 		textField_4.setEnabled(false);
@@ -232,10 +236,10 @@ public class CafeHome {
 		});
 		textField_4.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_4.setColumns(10);
-		textField_4.setBounds(182, 232, 86, 32);
 		panel.add(textField_4);
 		
 		textField_5 = new JTextField();
+		textField_5.setBounds(182, 179, 86, 32);
 		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_5.setText("0");
 		textField_5.setEnabled(false);
@@ -252,10 +256,10 @@ public class CafeHome {
 		});
 		textField_5.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_5.setColumns(10);
-		textField_5.setBounds(182, 179, 86, 32);
 		panel.add(textField_5);
 		
 		textField_6 = new JTextField();
+		textField_6.setBounds(182, 338, 86, 32);
 		textField_6.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_6.setText("0");
 		textField_6.setEnabled(false);
@@ -272,10 +276,10 @@ public class CafeHome {
 		});
 		textField_6.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_6.setColumns(10);
-		textField_6.setBounds(182, 338, 86, 32);
 		panel.add(textField_6);
 		
 		textField_7 = new JTextField();
+		textField_7.setBounds(182, 390, 86, 32);
 		textField_7.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_7.setText("0");
 		textField_7.setEnabled(false);
@@ -292,10 +296,10 @@ public class CafeHome {
 		});
 		textField_7.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_7.setColumns(10);
-		textField_7.setBounds(465, 19, 86, 32);
 		panel.add(textField_7);
 		
 		textField_8 = new JTextField();
+		textField_8.setBounds(182, 442, 86, 32);
 		textField_8.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_8.setText("0");
 		textField_8.setEnabled(false);
@@ -312,10 +316,10 @@ public class CafeHome {
 		});
 		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_8.setColumns(10);
-		textField_8.setBounds(465, 73, 86, 32);
 		panel.add(textField_8);
 		
 		textField_9 = new JTextField();
+		textField_9.setBounds(182, 492, 86, 32);
 		textField_9.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_9.setText("0");
 		textField_9.setEnabled(false);
@@ -332,10 +336,10 @@ public class CafeHome {
 		});
 		textField_9.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_9.setColumns(10);
-		textField_9.setBounds(465, 126, 86, 32);
 		panel.add(textField_9);
 		
 		textField_10 = new JTextField();
+		textField_10.setBounds(182, 544, 86, 32);
 		textField_10.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_10.setText("0");
 		textField_10.setEnabled(false);
@@ -352,10 +356,10 @@ public class CafeHome {
 		});
 		textField_10.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_10.setColumns(10);
-		textField_10.setBounds(465, 179, 86, 32);
 		panel.add(textField_10);
 		
 		textField_11 = new JTextField();
+		textField_11.setBounds(465, 27, 86, 32);
 		textField_11.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_11.setText("0");
 		textField_11.setEnabled(false);
@@ -372,10 +376,10 @@ public class CafeHome {
 		});
 		textField_11.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_11.setColumns(10);
-		textField_11.setBounds(465, 232, 86, 32);
 		panel.add(textField_11);
 		
 		textField_12 = new JTextField();
+		textField_12.setBounds(465, 80, 86, 32);
 		textField_12.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_12.setText("0");
 		textField_12.setEnabled(false);
@@ -392,10 +396,10 @@ public class CafeHome {
 		});
 		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_12.setColumns(10);
-		textField_12.setBounds(465, 285, 86, 32);
 		panel.add(textField_12);
 		
 		textField_13 = new JTextField();
+		textField_13.setBounds(465, 133, 86, 32);
 		textField_13.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_13.setText("0");
 		textField_13.setEnabled(false);
@@ -412,10 +416,10 @@ public class CafeHome {
 		});
 		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_13.setColumns(10);
-		textField_13.setBounds(465, 338, 86, 32);
 		panel.add(textField_13);
 		
 		JCheckBox chckbx = new JCheckBox("Chicken Burger");
+		chckbx.setBounds(10, 14, 166, 42);
 		chckbx.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -431,10 +435,10 @@ public class CafeHome {
 			}
 		});
 		chckbx.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx.setBounds(10, 14, 166, 42);
 		panel.add(chckbx);
 		
 		JCheckBox chckbx_2 = new JCheckBox("Ham Burger");
+		chckbx_2.setBounds(10, 66, 166, 42);
 		chckbx_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (chckbx_2.isSelected()) {
@@ -447,10 +451,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_2.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_2.setBounds(10, 66, 166, 42);
 		panel.add(chckbx_2);
 		
 		JCheckBox chckbx_3 = new JCheckBox("Chesse Burger");
+		chckbx_3.setBounds(10, 119, 166, 42);
 		chckbx_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -465,10 +469,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_3.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_3.setBounds(10, 119, 166, 42);
 		panel.add(chckbx_3);
 		
 		JCheckBox chckbx_5 = new JCheckBox("Steak Burger");
+		chckbx_5.setBounds(10, 171, 166, 42);
 		chckbx_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -483,10 +487,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_5.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_5.setBounds(10, 171, 166, 42);
 		panel.add(chckbx_5);
 		
 		JCheckBox chckbx_4 = new JCheckBox("Pork Burrito");
+		chckbx_4.setBounds(10, 330, 166, 42);
 		chckbx_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -501,10 +505,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_4.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_4.setBounds(10, 330, 166, 42);
 		panel.add(chckbx_4);
 		
 		JCheckBox chckbx_7 = new JCheckBox("Shrimp Burrito");
+		chckbx_7.setBounds(10, 275, 166, 42);
 		chckbx_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -519,10 +523,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_7.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_7.setBounds(10, 275, 166, 42);
 		panel.add(chckbx_7);
 		
 		JCheckBox chckbx_6 = new JCheckBox("Chicken Burrito");
+		chckbx_6.setBounds(10, 224, 166, 42);
 		chckbx_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -537,10 +541,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_6.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_6.setBounds(10, 224, 166, 42);
 		panel.add(chckbx_6);
 		
 		JCheckBox chckbx_8 = new JCheckBox("Margherita Pizza");
+		chckbx_8.setBounds(10, 384, 166, 42);
 		chckbx_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -555,10 +559,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_8.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_8.setBounds(290, 14, 166, 42);
 		panel.add(chckbx_8);
 		
 		JCheckBox chckbx_9 = new JCheckBox("Hawaiian Pizza");
+		chckbx_9.setBounds(10, 436, 166, 42);
 		chckbx_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -573,10 +577,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_9.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_9.setBounds(290, 66, 166, 42);
 		panel.add(chckbx_9);
 		
 		JCheckBox chckbx_10 = new JCheckBox("BBQ Bacon Pizza");
+		chckbx_10.setBounds(10, 486, 166, 42);
 		chckbx_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -591,10 +595,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_10.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_10.setBounds(290, 119, 166, 42);
 		panel.add(chckbx_10);
 		
 		JCheckBox chckbx_11 = new JCheckBox("Mix Pizza");
+		chckbx_11.setBounds(10, 538, 166, 42);
 		chckbx_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -609,10 +613,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_11.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_11.setBounds(290, 171, 166, 42);
 		panel.add(chckbx_11);
 		
 		JCheckBox chckbx_12 = new JCheckBox("Saucy Wings");
+		chckbx_12.setBounds(290, 19, 166, 42);
 		chckbx_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -627,10 +631,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_12.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_12.setBounds(290, 224, 166, 42);
 		panel.add(chckbx_12);
 		
 		JCheckBox chckbx_13 = new JCheckBox("Kids Meal");
+		chckbx_13.setBounds(290, 70, 166, 42);
 		chckbx_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -645,10 +649,10 @@ public class CafeHome {
 			}
 		});
 		chckbx_13.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_13.setBounds(290, 275, 166, 42);
 		panel.add(chckbx_13);
 		
 		JCheckBox chckbx_14 = new JCheckBox("Chicken Nugget");
+		chckbx_14.setBounds(290, 125, 166, 42);
 		chckbx_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -663,16 +667,137 @@ public class CafeHome {
 			}
 		});
 		chckbx_14.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_14.setBounds(290, 330, 166, 42);
 		panel.add(chckbx_14);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(581, 70, 350, 380);
-		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(null);
+		JCheckBox chckbx_15 = new JCheckBox("Cappuccino");
+		chckbx_15.setBounds(290, 218, 166, 42);
+		panel.add(chckbx_15);
+		chckbx_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_15.isSelected()) {
+					textField_14.setEnabled(true);
+					textField_14.setText("");
+				}else {
+					textField_14.setEnabled(false);
+					textField_14.setText("0");
+				}
+				
+			}
+		});
+		chckbx_15.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		
+		JCheckBox chckbx_16 = new JCheckBox("Americano");
+		chckbx_16.setBounds(290, 270, 166, 42);
+		panel.add(chckbx_16);
+		chckbx_16.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_16.isSelected()) {
+					textField_15.setEnabled(true);
+					textField_15.setText("");
+				}else {
+					textField_15.setEnabled(false);
+					textField_15.setText("0");
+				}
+				
+			}
+		});
+		chckbx_16.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		
+		JCheckBox chckbx_17 = new JCheckBox("Espresso");
+		chckbx_17.setBounds(290, 323, 166, 42);
+		panel.add(chckbx_17);
+		chckbx_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_17.isSelected()) {
+					textField_16.setEnabled(true);
+					textField_16.setText("");
+				}else {
+					textField_16.setEnabled(false);
+					textField_16.setText("0");
+				}
+				
+			}
+		});
+		chckbx_17.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		
+		JCheckBox chckbx_18 = new JCheckBox("Latte");
+		chckbx_18.setBounds(290, 375, 166, 42);
+		panel.add(chckbx_18);
+		chckbx_18.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_18.isSelected()) {
+					textField_17.setEnabled(true);
+					textField_17.setText("");
+				}else {
+					textField_17.setEnabled(false);
+					textField_17.setText("0");
+				}
+				
+			}
+		});
+		chckbx_18.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		
+		JCheckBox chckbx_19 = new JCheckBox("Ice Latte");
+		chckbx_19.setBounds(290, 428, 166, 42);
+		panel.add(chckbx_19);
+		chckbx_19.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_19.isSelected()) {
+					textField_18.setEnabled(true);
+					textField_18.setText("");
+				}else {
+					textField_18.setEnabled(false);
+					textField_18.setText("0");
+				}
+				
+			}
+		});
+		chckbx_19.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		
+		JCheckBox chckbx_20 = new JCheckBox("Mocha");
+		chckbx_20.setBounds(290, 479, 166, 42);
+		panel.add(chckbx_20);
+		chckbx_20.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_20.isSelected()) {
+					textField_19.setEnabled(true);
+					textField_19.setText("");
+				}else {
+					textField_19.setEnabled(false);
+					textField_19.setText("0");
+				}
+				
+			}
+		});
+		chckbx_20.setFont(new Font("Montserrat", Font.PLAIN, 16));
+		
+		JCheckBox chckbx_21 = new JCheckBox("Flat White");
+		chckbx_21.setBounds(290, 534, 166, 42);
+		panel.add(chckbx_21);
+		chckbx_21.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx_21.isSelected()) {
+					textField_20.setEnabled(true);
+					textField_20.setText("");
+				}else {
+					textField_20.setEnabled(false);
+					textField_20.setText("0");
+				}
+				
+			}
+		});
+		chckbx_21.setFont(new Font("Montserrat", Font.PLAIN, 16));
 		
 		textField_14 = new JTextField();
+		textField_14.setBounds(465, 224, 86, 32);
+		panel.add(textField_14);
 		textField_14.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_14.setText("0");
 		textField_14.setEnabled(false);
@@ -689,10 +814,10 @@ public class CafeHome {
 		});
 		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_14.setColumns(10);
-		textField_14.setBounds(219, 19, 86, 32);
-		panel_1.add(textField_14);
 		
 		textField_15 = new JTextField();
+		textField_15.setBounds(465, 278, 86, 32);
+		panel.add(textField_15);
 		textField_15.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_15.setText("0");
 		textField_15.setEnabled(false);
@@ -709,10 +834,10 @@ public class CafeHome {
 		});
 		textField_15.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_15.setColumns(10);
-		textField_15.setBounds(219, 73, 86, 32);
-		panel_1.add(textField_15);
 		
 		textField_16 = new JTextField();
+		textField_16.setBounds(465, 331, 86, 32);
+		panel.add(textField_16);
 		textField_16.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_16.setText("0");
 		textField_16.setEnabled(false);
@@ -729,10 +854,10 @@ public class CafeHome {
 		});
 		textField_16.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_16.setColumns(10);
-		textField_16.setBounds(219, 126, 86, 32);
-		panel_1.add(textField_16);
 		
 		textField_17 = new JTextField();
+		textField_17.setBounds(465, 384, 86, 32);
+		panel.add(textField_17);
 		textField_17.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_17.setText("0");
 		textField_17.setEnabled(false);
@@ -749,10 +874,10 @@ public class CafeHome {
 		});
 		textField_17.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_17.setColumns(10);
-		textField_17.setBounds(219, 179, 86, 32);
-		panel_1.add(textField_17);
 		
 		textField_18 = new JTextField();
+		textField_18.setBounds(465, 437, 86, 32);
+		panel.add(textField_18);
 		textField_18.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_18.setText("0");
 		textField_18.setEnabled(false);
@@ -769,10 +894,10 @@ public class CafeHome {
 		});
 		textField_18.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_18.setColumns(10);
-		textField_18.setBounds(219, 232, 86, 32);
-		panel_1.add(textField_18);
 		
 		textField_19 = new JTextField();
+		textField_19.setBounds(465, 490, 86, 32);
+		panel.add(textField_19);
 		textField_19.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_19.setText("0");
 		textField_19.setEnabled(false);
@@ -789,10 +914,10 @@ public class CafeHome {
 		});
 		textField_19.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_19.setColumns(10);
-		textField_19.setBounds(219, 285, 86, 32);
-		panel_1.add(textField_19);
 		
 		textField_20 = new JTextField();
+		textField_20.setBounds(465, 543, 86, 32);
+		panel.add(textField_20);
 		textField_20.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		textField_20.setText("0");
 		textField_20.setEnabled(false);
@@ -809,171 +934,30 @@ public class CafeHome {
 		});
 		textField_20.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_20.setColumns(10);
-		textField_20.setBounds(219, 338, 86, 32);
-		panel_1.add(textField_20);
 		
-		JCheckBox chckbx_15 = new JCheckBox("Cappuccino");
-		chckbx_15.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_15.isSelected()) {
-					textField_14.setEnabled(true);
-					textField_14.setText("");
-				}else {
-					textField_14.setEnabled(false);
-					textField_14.setText("0");
-				}
-				
-			}
-		});
-		chckbx_15.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_15.setBounds(26, 12, 166, 42);
-		panel_1.add(chckbx_15);
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(Color.DARK_GRAY);
+		panel_6.setBounds(290, 179, 261, 32);
+		panel.add(panel_6);
+		panel_6.setLayout(null);
 		
-		JCheckBox chckbx_16 = new JCheckBox("Americano");
-		chckbx_16.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_16.isSelected()) {
-					textField_15.setEnabled(true);
-					textField_15.setText("");
-				}else {
-					textField_15.setEnabled(false);
-					textField_15.setText("0");
-				}
-				
-			}
-		});
-		chckbx_16.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_16.setBounds(26, 64, 166, 42);
-		panel_1.add(chckbx_16);
+		JLabel lblDrinks = new JLabel("Drinks");
+		lblDrinks.setBounds(0, 0, 261, 32);
+		panel_6.add(lblDrinks);
+		lblDrinks.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDrinks.setForeground(Color.WHITE);
+		lblDrinks.setFont(new Font("Montserrat", Font.BOLD, 18));
 		
-		JCheckBox chckbx_17 = new JCheckBox("Espresso");
-		chckbx_17.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_17.isSelected()) {
-					textField_16.setEnabled(true);
-					textField_16.setText("");
-				}else {
-					textField_16.setEnabled(false);
-					textField_16.setText("0");
-				}
-				
-			}
-		});
-		chckbx_17.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_17.setBounds(26, 117, 166, 42);
-		panel_1.add(chckbx_17);
-		
-		JCheckBox chckbx_18 = new JCheckBox("Latte");
-		chckbx_18.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_18.isSelected()) {
-					textField_17.setEnabled(true);
-					textField_17.setText("");
-				}else {
-					textField_17.setEnabled(false);
-					textField_17.setText("0");
-				}
-				
-			}
-		});
-		chckbx_18.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_18.setBounds(26, 169, 166, 42);
-		panel_1.add(chckbx_18);
-		
-		JCheckBox chckbx_19 = new JCheckBox("Ice Latte");
-		chckbx_19.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_19.isSelected()) {
-					textField_18.setEnabled(true);
-					textField_18.setText("");
-				}else {
-					textField_18.setEnabled(false);
-					textField_18.setText("0");
-				}
-				
-			}
-		});
-		chckbx_19.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_19.setBounds(26, 222, 166, 42);
-		panel_1.add(chckbx_19);
-		
-		JCheckBox chckbx_20 = new JCheckBox("Mocha");
-		chckbx_20.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_20.isSelected()) {
-					textField_19.setEnabled(true);
-					textField_19.setText("");
-				}else {
-					textField_19.setEnabled(false);
-					textField_19.setText("0");
-				}
-				
-			}
-		});
-		chckbx_20.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_20.setBounds(26, 273, 166, 42);
-		panel_1.add(chckbx_20);
-		
-		JCheckBox chckbx_21 = new JCheckBox("Flat White");
-		chckbx_21.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (chckbx_21.isSelected()) {
-					textField_20.setEnabled(true);
-					textField_20.setText("");
-				}else {
-					textField_20.setEnabled(false);
-					textField_20.setText("0");
-				}
-				
-			}
-		});
-		chckbx_21.setFont(new Font("Montserrat", Font.PLAIN, 16));
-		chckbx_21.setBounds(26, 328, 166, 42);
-		panel_1.add(chckbx_21);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(10, 461, 281, 146);
-		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(null);
-		
-		JLabel lblNewLabel_1_9 = new JLabel("Cost of Meal");
-		lblNewLabel_1_9.setFont(new Font("Montserrat", Font.BOLD, 18));
-		lblNewLabel_1_9.setBounds(10, 32, 150, 31);
-		panel_2.add(lblNewLabel_1_9);
-		
-		JLabel jblCostOfMeal = new JLabel("");
-		jblCostOfMeal.setFont(new Font("Montserrat", Font.PLAIN, 17));
-		jblCostOfMeal.setBackground(Color.WHITE);
-		jblCostOfMeal.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
-		jblCostOfMeal.setHorizontalAlignment(SwingConstants.CENTER);
-		jblCostOfMeal.setBounds(165, 32, 106, 31);
-		panel_2.add(jblCostOfMeal);
-		
-		JLabel lblNewLabel_1_9_1 = new JLabel("Cost of Drinks");
-		lblNewLabel_1_9_1.setFont(new Font("Montserrat", Font.BOLD, 18));
-		lblNewLabel_1_9_1.setBounds(10, 86, 150, 31);
-		panel_2.add(lblNewLabel_1_9_1);
-		
-		JLabel jblCostOfDrinks = new JLabel("");
-		jblCostOfDrinks.setHorizontalAlignment(SwingConstants.CENTER);
-		jblCostOfDrinks.setFont(new Font("Montserrat", Font.PLAIN, 17));
-		jblCostOfDrinks.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
-		jblCostOfDrinks.setBackground(Color.WHITE);
-		jblCostOfDrinks.setBounds(165, 86, 106, 31);
-		panel_2.add(jblCostOfDrinks);
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(581, 70, 350, 380);
+		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		frame.getContentPane().add(panel_1);
+		panel_1.setLayout(null);
 		
 		JPanel panel_2_2 = new JPanel();
 		panel_2_2.setLayout(null);
 		panel_2_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_2_2.setBounds(301, 461, 270, 146);
+		panel_2_2.setBounds(628, 461, 270, 146);
 		frame.getContentPane().add(panel_2_2);
 		
 		JLabel jblTax = new JLabel("");
@@ -986,13 +970,13 @@ public class CafeHome {
 		
 		JPanel panel_2_1 = new JPanel();
 		panel_2_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_2_1.setBounds(581, 461, 350, 208);
+		panel_2_1.setBounds(908, 461, 350, 208);
 		frame.getContentPane().add(panel_2_1);
 		panel_2_1.setLayout(null);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_4.setBounds(10, 618, 561, 51);
+		panel_4.setBounds(605, 662, 561, 51);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(null);
 
@@ -1131,29 +1115,17 @@ public class CafeHome {
 		panel_2_1.add(btnReset);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(0, 0, 956, 59);
+		panel_3.setBounds(0, 0, 571, 59);
 		panel_3.setBackground(Color.DARK_GRAY);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(null);
 		
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(Color.LIGHT_GRAY);
-		panel_5.setBounds(575, 11, 1, 37);
-		panel_3.add(panel_5);
-		
 		JLabel lblNewLabel = new JLabel("Meals");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("BankGothic Md BT", Font.BOLD, 35));
-		lblNewLabel.setBounds(0, 0, 576, 59);
+		lblNewLabel.setFont(new Font("Montserrat", Font.BOLD, 35));
+		lblNewLabel.setBounds(10, 0, 561, 59);
 		panel_3.add(lblNewLabel);
-		
-		JLabel lblDrinks = new JLabel("Drinks");
-		lblDrinks.setHorizontalAlignment(SwingConstants.CENTER);
-		lblDrinks.setForeground(Color.WHITE);
-		lblDrinks.setFont(new Font("BankGothic Md BT", Font.BOLD, 35));
-		lblDrinks.setBounds(575, 0, 381, 59);
-		panel_3.add(lblDrinks);
 		
 
 		
@@ -1294,6 +1266,38 @@ public class CafeHome {
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 87, 330, 2);
 		panel_2_1.add(separator);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(595, 600, 561, 51);
+		frame.getContentPane().add(panel_2);
+		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		panel_2.setLayout(null);
+		
+		JLabel lblNewLabel_1_9 = new JLabel("Cost of Meal");
+		lblNewLabel_1_9.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9.setBounds(290, 11, 150, 31);
+		panel_2.add(lblNewLabel_1_9);
+		
+		JLabel jblCostOfMeal = new JLabel("");
+		jblCostOfMeal.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfMeal.setBackground(Color.WHITE);
+		jblCostOfMeal.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
+		jblCostOfMeal.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfMeal.setBounds(445, 11, 106, 31);
+		panel_2.add(jblCostOfMeal);
+		
+		JLabel lblNewLabel_1_9_1 = new JLabel("Cost of Drinks");
+		lblNewLabel_1_9_1.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9_1.setBounds(10, 11, 150, 31);
+		panel_2.add(lblNewLabel_1_9_1);
+		
+		JLabel jblCostOfDrinks = new JLabel("");
+		jblCostOfDrinks.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfDrinks.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfDrinks.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
+		jblCostOfDrinks.setBackground(Color.WHITE);
+		jblCostOfDrinks.setBounds(165, 11, 106, 31);
+		panel_2.add(jblCostOfDrinks);
 		
 
 		
