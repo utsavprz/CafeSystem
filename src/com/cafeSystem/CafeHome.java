@@ -4,6 +4,11 @@ import java.awt.EventQueue;
 
 import java.util.stream.*;
 import java.lang.Double;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
@@ -36,6 +41,12 @@ import javax.swing.border.CompoundBorder;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JScrollBar;
+import javax.swing.JTable;
+import javax.swing.border.TitledBorder;
+import java.awt.SystemColor;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class CafeHome {
 
@@ -62,11 +73,18 @@ public class CafeHome {
 	private JTextField textField_19;
 	private JTextField textField_20;
 	
+	private JButton btnAdd;
 	
-	double cBurger = 150;
-	double hBurger = 180;
-	double csBurger = 130;
-	double sBurger = 230;
+	String item;
+	int price;
+	int tot;
+	
+	
+	
+	int cBurger = 150;
+	int hBurger = 180;
+	int csBurger = 130;
+	int sBurger = 230;
 	
 	double cBurrito = 180;
 	double sBurrito = 220;
@@ -95,6 +113,9 @@ public class CafeHome {
 	
 	double[] itemcost = new double[21]; //array for calculation
 	private JTextField textField_21;
+	private JTable table;
+	private JTextField textField_22;
+	private JTextField textField_23;
 
 	/**
 	 * Launch the application.
@@ -119,21 +140,69 @@ public class CafeHome {
 		initialize();
 	}
 
+	public void add(String cst, String tbn, String itm, int prc, int qtn, int tot, String dt, String tm) {
+        String customer = cst;
+        String table = tbn;
+		String itemName = itm;
+        int itemPrice = prc;
+        int itemQty = qtn;
+        int itemTot = tot;
+        String curDate = dt;
+        String curTime = tm;
+        
+		
+        
+    	String url = "jdbc:mysql://127.0.0.1:3306/cafe_system";
+    	String user = "root";
+    	String pass = "madridista00";
+
+        
+        if (customer.isEmpty() || table.isEmpty() || itemName.isEmpty() ) {
+        	JOptionPane.showMessageDialog(btnAdd, "Enter valid details");
+        }else {
+        	try {
+                Connection connection = DriverManager.getConnection(url,user,pass);
+
+                String query = " insert into order_detail (custName, tabNo, item, price, qty, total, date, time)"
+                        + " values (?, ?, ?, ?, ?, ?, ?, ?)";
+
+                Statement sta = connection.createStatement();
+                
+                PreparedStatement preparedStmt = connection.prepareStatement(query);
+                preparedStmt.setString (1, customer);
+                preparedStmt.setString (2, table);
+                preparedStmt.setString (3, itemName);
+                preparedStmt.setInt (4, itemPrice);
+                preparedStmt.setInt (5, itemQty);
+                preparedStmt.setInt (6, itemTot);
+                preparedStmt.setString (7, curDate);
+                preparedStmt.setString (8, curTime);
+                
+                
+                boolean x = preparedStmt.execute();
+                connection.close();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+	}
+	}
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(200, 100, 1336, 718);
+		frame.setBounds(200, 100, 1180, 711);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("Cafe System");
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(10, 70, 561, 599);
+		panel.setBounds(10, 70, 561, 589);
 		panel.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
 		frame.getContentPane().add(panel);
+		
+		
 		
 		textField = new JTextField();
 		textField.setBounds(182, 19, 86, 32);
@@ -949,15 +1018,19 @@ public class CafeHome {
 		lblDrinks.setFont(new Font("Montserrat", Font.BOLD, 18));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(581, 70, 350, 380);
+		panel_1.setBounds(581, 11, 571, 295);
 		panel_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
+		table = new JTable();
+		table.setBounds(10, 11, 551, 271);
+		panel_1.add(table);
+		
 		JPanel panel_2_2 = new JPanel();
 		panel_2_2.setLayout(null);
 		panel_2_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_2_2.setBounds(628, 461, 270, 146);
+		panel_2_2.setBounds(581, 389, 270, 146);
 		frame.getContentPane().add(panel_2_2);
 		
 		JLabel jblTax = new JLabel("");
@@ -965,18 +1038,18 @@ public class CafeHome {
 		jblTax.setFont(new Font("Montserrat", Font.PLAIN, 17));
 		jblTax.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
 		jblTax.setBackground(Color.WHITE);
-		jblTax.setBounds(154, 86, 106, 32);
+		jblTax.setBounds(154, 54, 106, 32);
 		panel_2_2.add(jblTax);
 		
 		JPanel panel_2_1 = new JPanel();
 		panel_2_1.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_2_1.setBounds(908, 461, 350, 208);
+		panel_2_1.setBounds(861, 389, 291, 146);
 		frame.getContentPane().add(panel_2_1);
 		panel_2_1.setLayout(null);
 		
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_4.setBounds(605, 662, 561, 51);
+		panel_4.setBounds(581, 608, 561, 51);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(null);
 
@@ -988,28 +1061,39 @@ public class CafeHome {
 		jblTotal.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
 		jblTotal.setBackground(Color.WHITE);
 		
-		JButton btnExit = new JButton("Exit");
-		btnExit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "CafeSystem",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
-					System.exit(0);
-				}
-				
-			}
-		});
-		btnExit.setFont(new Font("Montserrat", Font.BOLD, 14));
-		btnExit.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
-		btnExit.setBackground(new Color(255, 51, 51));
-		btnExit.setBounds(209, 151, 103, 33);
-		panel_2_1.add(btnExit);
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(581, 546, 561, 51);
+		frame.getContentPane().add(panel_2);
+		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		panel_2.setLayout(null);
+		
+		JLabel jblCostOfMeal = new JLabel("");
+		jblCostOfMeal.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfMeal.setBackground(Color.WHITE);
+		jblCostOfMeal.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
+		jblCostOfMeal.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfMeal.setBounds(445, 11, 106, 31);
+		panel_2.add(jblCostOfMeal);
+		
+		JLabel lblNewLabel_1_9_1 = new JLabel("Cost of Drinks");
+		lblNewLabel_1_9_1.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_1_9_1.setBounds(10, 11, 150, 31);
+		panel_2.add(lblNewLabel_1_9_1);
+		
+		JLabel jblCostOfDrinks = new JLabel("");
+		jblCostOfDrinks.setHorizontalAlignment(SwingConstants.CENTER);
+		jblCostOfDrinks.setFont(new Font("Montserrat", Font.PLAIN, 17));
+		jblCostOfDrinks.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
+		jblCostOfDrinks.setBackground(Color.WHITE);
+		jblCostOfDrinks.setBounds(165, 11, 106, 31);
+		panel_2.add(jblCostOfDrinks);
 		
 		JLabel jblChange = new JLabel("");
 		jblChange.setHorizontalAlignment(SwingConstants.CENTER);
 		jblChange.setFont(new Font("Montserrat", Font.PLAIN, 17));
 		jblChange.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, new Color(128, 128, 128)));
 		jblChange.setBackground(Color.WHITE);
-		jblChange.setBounds(154, 31, 106, 32);
+		jblChange.setBounds(154, 11, 106, 32);
 		panel_2_2.add(jblChange);
 		
 		JLabel jblSubTotal = new JLabel("");
@@ -1092,6 +1176,8 @@ public class CafeHome {
 				textField_19.setText("0");
 				textField_20.setText("0");
 				textField_21.setText(null);
+				textField_22.setText(null);
+				textField_23.setText(null);
 				
 				jblCostOfMeal.setText(null);
 				jblCostOfDrinks.setText(null);
@@ -1111,7 +1197,7 @@ public class CafeHome {
 		btnReset.setFont(new Font("Montserrat", Font.BOLD, 14));
 		btnReset.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		btnReset.setBackground(new Color(153, 255, 102));
-		btnReset.setBounds(38, 151, 103, 33);
+		btnReset.setBounds(165, 55, 103, 33);
 		panel_2_1.add(btnReset);
 		
 		JPanel panel_3 = new JPanel();
@@ -1145,13 +1231,26 @@ public class CafeHome {
 		
 		JLabel lblNewLabel_1_9_1_2 = new JLabel("Tax");
 		lblNewLabel_1_9_1_2.setFont(new Font("Montserrat", Font.BOLD, 18));
-		lblNewLabel_1_9_1_2.setBounds(10, 87, 150, 31);
+		lblNewLabel_1_9_1_2.setBounds(10, 55, 40, 31);
 		panel_2_2.add(lblNewLabel_1_9_1_2);
 		
 		JLabel lblNewLabel_1_9_1_2_1 = new JLabel("Change");
 		lblNewLabel_1_9_1_2_1.setFont(new Font("Montserrat", Font.BOLD, 18));
-		lblNewLabel_1_9_1_2_1.setBounds(10, 31, 150, 31);
+		lblNewLabel_1_9_1_2_1.setBounds(10, 13, 150, 31);
 		panel_2_2.add(lblNewLabel_1_9_1_2_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("Paid Amount");
+		lblNewLabel_1.setBounds(10, 106, 111, 23);
+		panel_2_2.add(lblNewLabel_1);
+		lblNewLabel_1.setFont(new Font("Montserrat", Font.BOLD, 16));
+		
+		textField_21 = new JTextField();
+		textField_21.setBounds(154, 97, 106, 32);
+		panel_2_2.add(textField_21);
+		textField_21.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, Color.GRAY));
+		textField_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		textField_21.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_21.setColumns(10);
 		
 
 		
@@ -1218,14 +1317,6 @@ public class CafeHome {
 
 		});
 		
-		textField_21 = new JTextField();
-		textField_21.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, Color.GRAY));
-		textField_21.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		textField_21.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_21.setBounds(209, 29, 103, 32);
-		panel_2_1.add(textField_21);
-		textField_21.setColumns(10);
-		
 		JButton getChange = new JButton("Get Change");
 		getChange.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -1248,56 +1339,109 @@ public class CafeHome {
 		getChange.setFont(new Font("Montserrat", Font.BOLD, 14));
 		getChange.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		getChange.setBackground(new Color(153, 255, 102));
-		getChange.setBounds(209, 107, 103, 33);
+		getChange.setBounds(23, 102, 103, 33);
 		panel_2_1.add(getChange);
 		
 		btnNewButton.setFont(new Font("Montserrat", Font.BOLD, 14));
 		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNewButton.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, new Color(128, 128, 128), new Color(0, 255, 0)));
 		btnNewButton.setBackground(new Color(153, 255, 102));
-		btnNewButton.setBounds(38, 107, 103, 33);
+		btnNewButton.setBounds(165, 11, 103, 33);
 		panel_2_1.add(btnNewButton);
 		
-		JLabel lblNewLabel_1 = new JLabel("Paid Amount");
-		lblNewLabel_1.setFont(new Font("Montserrat", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(38, 33, 111, 23);
-		panel_2_1.add(lblNewLabel_1);
+
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 87, 330, 2);
-		panel_2_1.add(separator);
+		JButton btnInvoice = new JButton("Invoice");
+		btnInvoice.setBounds(23, 55, 103, 33);
+		panel_2_1.add(btnInvoice);
+		btnInvoice.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnInvoice.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnInvoice.setBackground(new Color(153, 255, 102));
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(595, 600, 561, 51);
-		frame.getContentPane().add(panel_2);
-		panel_2.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
-		panel_2.setLayout(null);
+		JButton btnExit = new JButton("Exit");
+		btnExit.setBounds(165, 102, 103, 33);
+		panel_2_1.add(btnExit);
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit", "CafeSystem",JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION) {
+					System.exit(0);
+				}
+				
+			}
+		});
+		btnExit.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnExit.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnExit.setBackground(new Color(255, 51, 51));
+		
+
 		
 		JLabel lblNewLabel_1_9 = new JLabel("Cost of Meal");
 		lblNewLabel_1_9.setFont(new Font("Montserrat", Font.BOLD, 18));
 		lblNewLabel_1_9.setBounds(290, 11, 150, 31);
 		panel_2.add(lblNewLabel_1_9);
 		
-		JLabel jblCostOfMeal = new JLabel("");
-		jblCostOfMeal.setFont(new Font("Montserrat", Font.PLAIN, 17));
-		jblCostOfMeal.setBackground(Color.WHITE);
-		jblCostOfMeal.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
-		jblCostOfMeal.setHorizontalAlignment(SwingConstants.CENTER);
-		jblCostOfMeal.setBounds(445, 11, 106, 31);
-		panel_2.add(jblCostOfMeal);
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(SystemColor.window);
+		panel_5.setBorder(new LineBorder(Color.LIGHT_GRAY, 2));
+		panel_5.setBounds(581, 317, 571, 64);
+		frame.getContentPane().add(panel_5);
+		panel_5.setLayout(null);
 		
-		JLabel lblNewLabel_1_9_1 = new JLabel("Cost of Drinks");
-		lblNewLabel_1_9_1.setFont(new Font("Montserrat", Font.BOLD, 18));
-		lblNewLabel_1_9_1.setBounds(10, 11, 150, 31);
-		panel_2.add(lblNewLabel_1_9_1);
+		textField_22 = new JTextField();
+		textField_22.setBackground(SystemColor.window);
+		textField_22.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Customer Name", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textField_22.setBounds(36, 11, 230, 42);
+		panel_5.add(textField_22);
+		textField_22.setColumns(10);
 		
-		JLabel jblCostOfDrinks = new JLabel("");
-		jblCostOfDrinks.setHorizontalAlignment(SwingConstants.CENTER);
-		jblCostOfDrinks.setFont(new Font("Montserrat", Font.PLAIN, 17));
-		jblCostOfDrinks.setBorder(new EtchedBorder(EtchedBorder.RAISED, null, Color.GRAY));
-		jblCostOfDrinks.setBackground(Color.WHITE);
-		jblCostOfDrinks.setBounds(165, 11, 106, 31);
-		panel_2.add(jblCostOfDrinks);
+		textField_23 = new JTextField();
+		textField_23.setBackground(SystemColor.window);
+		textField_23.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Table no.", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		textField_23.setBounds(296, 11, 230, 42);
+		panel_5.add(textField_23);
+		textField_23.setColumns(10);
+		
+	      DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu/MM/dd");
+	      LocalDate localDate = LocalDate.now();
+	      String dateCur = dtf.format(localDate);
+	      
+		
+        DateTimeFormatter dtfa = DateTimeFormatter.ofPattern("HH:mm:ss");
+        LocalTime localTime = LocalTime.now();
+        String timeCur = dtfa.format(localTime);
+		
+		
+		
+		btnAdd = new JButton("Add");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				if (chckbx.isSelected()) {
+					 int totalPric = Integer.parseInt(textField.getText()) * cBurger;
+					 int totalqtn = Integer.parseInt(textField.getText());
+					 
+					CafeHome callAdd = new CafeHome();
+					callAdd.add(textField_22.getText(), textField_23.getText(), "Chicken Burger", cBurger, totalqtn, totalPric, dateCur, timeCur);
+				}
+				
+				if (chckbx_2.isSelected()) {
+					 int totalPric = Integer.parseInt(textField_1.getText()) * hBurger;
+					 int totalqtn = Integer.parseInt(textField_1.getText());
+					 
+					CafeHome callAdd = new CafeHome();
+					callAdd.add(textField_22.getText(), textField_23.getText(), "Ham Burger", hBurger, totalqtn, totalPric, dateCur, timeCur);
+				}
+				
+			}
+		});
+		btnAdd.setFont(new Font("Montserrat", Font.BOLD, 14));
+		btnAdd.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, new Color(128, 128, 128), new Color(0, 255, 0)));
+		btnAdd.setBackground(new Color(153, 255, 102));
+		btnAdd.setBounds(23, 11, 103, 33);
+		panel_2_1.add(btnAdd);
+		
+
 		
 
 		
