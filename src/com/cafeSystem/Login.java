@@ -111,7 +111,7 @@ public class Login {
                     if (rs.next()) {
                     	JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
                     	frame.dispose();
-                    	CafeHome call = new CafeHome();   
+                    	Reception call = new Reception();   
                     	call.main(null);
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");

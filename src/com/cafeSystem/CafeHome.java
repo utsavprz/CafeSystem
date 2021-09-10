@@ -145,7 +145,7 @@ public class CafeHome {
 	}
 
 	public void add(String cst, String tbn, String itm, int prc, int qtn, int tot, String dt, String tm) {
-        String customer = cst;
+		String customer = cst;
         String table = tbn;
 		String itemName = itm;
         int itemPrice = prc;
