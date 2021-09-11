@@ -43,6 +43,8 @@ public class UserRegistration extends JFrame {
         });
     }
     
+
+    
     /**
      * Create the frame.
      */
@@ -189,8 +191,6 @@ public class UserRegistration extends JFrame {
                         boolean x = preparedStmt.execute();
                         if (x == true) {
                             JOptionPane.showMessageDialog(btnNewButton, "Account not created");
-                            CafeSystem call = new CafeSystem();
-                            call.main(null);
                         } else {
                             JOptionPane.showMessageDialog(btnNewButton,
                                 "Welcome, " + greet + "Your account is sucessfully created");

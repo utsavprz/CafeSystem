@@ -79,12 +79,12 @@ public class Login {
 		
 		JLabel lblNewLabel_1 = new JLabel("CAFE");
 		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD, 25));
-		lblNewLabel_1.setBounds(137, 37, 76, 37);
+		lblNewLabel_1.setBounds(85, 56, 76, 37);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("SYSTEM");
 		lblNewLabel_1_1.setFont(new Font("Arial Black", Font.BOLD, 25));
-		lblNewLabel_1_1.setBounds(116, 64, 129, 45);
+		lblNewLabel_1_1.setBounds(171, 52, 129, 45);
 		panel.add(lblNewLabel_1_1);
 		
 		JButton btnNewButton = new JButton("Login");
@@ -107,11 +107,11 @@ public class Login {
                     st.setString(1, userName);
                     st.setString(2, password);
                     ResultSet rs = st.executeQuery();
-                    
+
                     if (rs.next()) {
                     	JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
                     	frame.dispose();
-                    	CafeHome call = new CafeHome();   
+                    	Reception call = new Reception();   
                     	call.main(null);
                     } else {
                         JOptionPane.showMessageDialog(btnNewButton, "Wrong Username & Password");
@@ -124,7 +124,7 @@ public class Login {
 		btnNewButton.setBorder(null);
 		btnNewButton.setBackground(Color.decode("#FFAB00"));
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnNewButton.setBounds(122, 272, 111, 37);
+		btnNewButton.setBounds(33, 272, 290, 37);
 		panel.add(btnNewButton);
 		
 		passwordField = new JPasswordField();
