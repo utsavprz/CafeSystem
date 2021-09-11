@@ -109,7 +109,7 @@ public class CafeHome {
 	int m = 250;
 	int f = 195;
 	
-	double tax_rate = 15;
+	double tax_rate = 10 ;
 	
 	double iTotal, iChange, iCost, iTax, iSubTotal, iMeal, iDrink;
 	
@@ -1188,6 +1188,10 @@ public class CafeHome {
 		JLabel lblNewLabel_2 = new JLabel("Please use the system only to order food");
 		lblNewLabel_2.setBounds(321, 11, 240, 14);
 		panel_1.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("Please enter your first name and table number");
+		lblNewLabel_2_1.setBounds(20, 224, 240, 14);
+		panel_1.add(lblNewLabel_2_1);
 
 		
 		JPanel panel_2_2 = new JPanel();

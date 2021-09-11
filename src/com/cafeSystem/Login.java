@@ -107,7 +107,7 @@ public class Login {
                     st.setString(1, userName);
                     st.setString(2, password);
                     ResultSet rs = st.executeQuery();
-                    
+
                     if (rs.next()) {
                     	JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
                     	frame.dispose();
