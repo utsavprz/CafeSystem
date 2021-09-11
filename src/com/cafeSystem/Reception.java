@@ -145,6 +145,23 @@ public class Reception {
 
 			ResultSet rs = pst.executeQuery();
 			table.setModel(DbUtils.resultSetToTableModel(rs));
+			
+			if (table.getRowCount() != 0) {
+				
+				DefaultTableCellRenderer centerRenderer1 = new DefaultTableCellRenderer();
+				centerRenderer1.setHorizontalAlignment( JLabel.CENTER );
+				
+				table.getColumnModel().getColumn(0).setCellRenderer( centerRenderer1 );
+				table.getColumnModel().getColumn(1).setCellRenderer( centerRenderer1 );
+//				table.getColumnModel().getColumn(2).setCellRenderer( centerRenderer1 );
+				table.getColumnModel().getColumn(3).setCellRenderer( centerRenderer1 );
+				table.getColumnModel().getColumn(4).setCellRenderer( centerRenderer1 );
+				table.getColumnModel().getColumn(5).setCellRenderer( centerRenderer1 );
+				table.getColumnModel().getColumn(6).setCellRenderer( centerRenderer1 );
+				table.getColumnModel().getColumn(7).setCellRenderer( centerRenderer1 );
+				
+				table.getTableHeader().setBorder(new LineBorder(Color.white));
+			}
 
 		} catch (Exception exception) {
 			exception.printStackTrace();
@@ -159,6 +176,7 @@ public class Reception {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.decode("#272836"));
 		frame.setBounds(100, 100, 1160, 629);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -166,11 +184,19 @@ public class Reception {
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 61, 817, 227);
+		scrollPane.getViewport().setBackground(Color.decode("#262837"));
+		scrollPane.setBorder(BorderFactory.createEmptyBorder());
+		
 		frame.getContentPane().add(scrollPane);
 
 		table = new JTable();
+		table.setShowVerticalLines(false);
+		table.setShowGrid(false);
+		table.setShowHorizontalLines(false);
+		table.setBackground(new Color(38,40,55));
+		table.setForeground(new Color(255, 255, 255));
 		table.setGridColor(Color.WHITE);
-		table.setRowHeight(20);
+		table.setRowHeight(25);
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -185,13 +211,22 @@ public class Reception {
 
 			}
 		});
+		
+		
+		table.getTableHeader().setBackground(Color.decode("#262837"));
+		table.getTableHeader().setForeground(Color.decode("#ffffff"));
+		
+
+		
 		scrollPane.setViewportView(table);
+		
+
 
 		JButton btnDisplay = new JButton("Refresh");
 		btnDisplay.setBackground(Color.WHITE);
-		btnDisplay.setFont(new Font("Segoe UI", Font.BOLD, 11));
+		btnDisplay.setFont(new Font("Lato", Font.BOLD, 11));
 		btnDisplay.setBounds(707, 299, 120, 30);
-		btnDisplay.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnDisplay.setBorder(null);
 		btnDisplay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -210,49 +245,55 @@ public class Reception {
 
 		JLabel lblNewLabel = new JLabel("Date");
 		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Lato", Font.PLAIN, 12));
+		lblNewLabel.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel.setBounds(10, 50, 46, 14);
 		panel_1.add(lblNewLabel);
 
 		textField = new JTextField();
+		textField.setBackground(Color.decode("#2C303E"));
+		textField.setForeground(new Color(255, 255, 255));
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setBorder(new LineBorder(new Color(171, 173, 179)));
+		textField.setBorder(null);
 		textField.setText(dateCur);
 		textField.setBounds(102, 42, 125, 30);
 		panel_1.add(textField);
 		textField.setColumns(10);
 
 		textField_1 = new JTextField();
+		textField_1.setBackground(Color.decode("#2C303E"));
+		textField_1.setForeground(new Color(255, 255, 255));
 		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_1.setBorder(new LineBorder(new Color(171, 173, 179)));
+		textField_1.setBorder(null);
 		textField_1.setColumns(10);
 		textField_1.setBounds(102, 83, 125, 30);
 		panel_1.add(textField_1);
 
 		JLabel lblCustomerName = new JLabel("Name");
 		lblCustomerName.setForeground(Color.WHITE);
-		lblCustomerName.setFont(new Font("Lato", Font.PLAIN, 12));
+		lblCustomerName.setFont(new Font("Lato", Font.BOLD, 12));
 		lblCustomerName.setBounds(10, 91, 67, 14);
 		panel_1.add(lblCustomerName);
 
 		JLabel lblNewLabel_1 = new JLabel("Table No.");
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setFont(new Font("Lato", Font.PLAIN, 12));
+		lblNewLabel_1.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_1.setBounds(10, 132, 60, 14);
 		panel_1.add(lblNewLabel_1);
 
 		textField_2 = new JTextField();
+		textField_2.setBackground(Color.decode("#2C303E"));
+		textField_2.setForeground(new Color(255, 255, 255));
 		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_2.setBorder(new LineBorder(new Color(171, 173, 179)));
+		textField_2.setBorder(null);
 		textField_2.setColumns(10);
 		textField_2.setBounds(102, 124, 125, 30);
 		panel_1.add(textField_2);
 
 		JButton btnNewButton = new JButton("Show Order");
 		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setFont(new Font("Segoe UI", Font.BOLD, 11));
+		btnNewButton.setFont(new Font("Lato", Font.BOLD, 11));
 		btnNewButton.setBackground(Color.decode("#2299DD"));
-		btnNewButton.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton.setBorder(null);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -280,8 +321,8 @@ public class Reception {
 
 		JLabel lblNewLabel_2 = new JLabel("Search Order");
 		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Montserrat", Font.PLAIN, 17));
-		lblNewLabel_2.setBounds(10, 11, 131, 14);
+		lblNewLabel_2.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_2.setBounds(10, 6, 131, 25);
 		panel_1.add(lblNewLabel_2);
 
 		JSeparator separator = new JSeparator();
@@ -290,9 +331,9 @@ public class Reception {
 
 		JButton btnNewButton_1 = new JButton("Clear");
 		btnNewButton_1.setForeground(Color.WHITE);
-		btnNewButton_1.setFont(new Font("Segoe UI", Font.BOLD, 11));
+		btnNewButton_1.setFont(new Font("Lato", Font.BOLD, 11));
 		btnNewButton_1.setBackground(Color.RED);
-		btnNewButton_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		btnNewButton_1.setBorder(null);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -337,7 +378,7 @@ public class Reception {
 
 		JLabel lblNewLabel_1_1_1 = new JLabel("Item Name");
 		lblNewLabel_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1_1.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_1_1_1.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_1_1_1.setBounds(314, 50, 76, 14);
 		panel_1.add(lblNewLabel_1_1_1);
 
@@ -353,19 +394,19 @@ public class Reception {
 	
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Price");
 		lblNewLabel_1_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1_1_1.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_1_1_1_1.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1.setBounds(314, 91, 46, 14);
 		panel_1.add(lblNewLabel_1_1_1_1);
 
 		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("Quantity");
 		lblNewLabel_1_1_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1_1_1_1.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_1_1_1_1_1.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1_1.setBounds(314, 132, 60, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1);
 
 		JLabel lblNewLabel_1_1_1_1_1_1 = new JLabel("Item Total");
 		lblNewLabel_1_1_1_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1_1_1_1_1.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_1_1_1_1_1_1.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1_1_1.setBounds(572, 50, 60, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1);
 
@@ -391,14 +432,14 @@ public class Reception {
 		textField_8.setForeground(new Color(255, 255, 255));
 		textField_8.setBackground(Color.decode("#2C303E"));
 		textField_8.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_8.setBorder(new LineBorder(new Color(46, 49, 62)));
+		textField_8.setBorder(null);
 		textField_8.setColumns(10);
 		textField_8.setBounds(660, 42, 110, 30);
 		panel_1.add(textField_8);
 
 		JLabel lblNewLabel_3 = new JLabel("Sub Total");
 		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_3.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_3.setBounds(572, 91, 60, 14);
 		panel_1.add(lblNewLabel_3);
 
@@ -412,7 +453,7 @@ public class Reception {
 
 		JLabel lblNewLabel_5 = new JLabel("Total");
 		lblNewLabel_5.setForeground(Color.WHITE);
-		lblNewLabel_5.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_5.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_5.setBounds(572, 132, 46, 14);
 		panel_1.add(lblNewLabel_5);
 
@@ -426,7 +467,7 @@ public class Reception {
 
 		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("Paid Amount");
 		lblNewLabel_1_1_1_1_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_1_1_1_1_1_1_1.setFont(new Font("Lato", Font.PLAIN, 13));
+		lblNewLabel_1_1_1_1_1_1_1.setFont(new Font("Lato", Font.BOLD, 12));
 		lblNewLabel_1_1_1_1_1_1_1.setBounds(314, 173, 89, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1_1);
 
@@ -441,8 +482,8 @@ public class Reception {
 
 		JLabel lblNewLabel_5_1 = new JLabel("Change");
 		lblNewLabel_5_1.setForeground(Color.WHITE);
-		lblNewLabel_5_1.setFont(new Font("Lato", Font.PLAIN, 13));
-		lblNewLabel_5_1.setBounds(572, 173, 60, 14);
+		lblNewLabel_5_1.setFont(new Font("Lato", Font.BOLD, 12));
+		lblNewLabel_5_1.setBounds(572, 165, 60, 30);
 		panel_1.add(lblNewLabel_5_1);
 
 		JSeparator separator_1 = new JSeparator();
@@ -451,8 +492,8 @@ public class Reception {
 
 		JLabel lblNewLabel_2_1 = new JLabel("Add to Invoice");
 		lblNewLabel_2_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1.setFont(new Font("Montserrat", Font.PLAIN, 17));
-		lblNewLabel_2_1.setBounds(314, 11, 163, 14);
+		lblNewLabel_2_1.setFont(new Font("Montserrat", Font.BOLD, 18));
+		lblNewLabel_2_1.setBounds(314, 9, 163, 19);
 		panel_1.add(lblNewLabel_2_1);
 		
 		JPanel panel_2 = new JPanel();
@@ -485,7 +526,7 @@ public class Reception {
 		
 		panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(837, 61, 297, 478);
+		panel.setBounds(837, 61, 297, 500);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -526,7 +567,7 @@ public class Reception {
 							}
 						});
 						
-						table_1.getTableHeader().setBorder(BorderFactory.createEmptyBorder());
+						table_1.getTableHeader().setBorder(new MatteBorder(0, 0, 1, 0, (Color) new Color(102, 102, 102)));
 						table_1.getTableHeader().setBackground(Color.white);
 						
 						table_1.getColumnModel().getColumn(0).setPreferredWidth(140);
@@ -622,15 +663,15 @@ public class Reception {
 								btnNewButton_2.setBounds(20, 299, 89, 30);
 								frame.getContentPane().add(btnNewButton_2);
 								btnNewButton_2.setForeground(Color.white);
-								btnNewButton_2.setFont(new Font("Segoe UI", Font.BOLD, 11));
-								btnNewButton_2.setBackground(Color.decode("#39956C"));
-								btnNewButton_2.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+								btnNewButton_2.setFont(new Font("Lato", Font.BOLD, 11));
+								btnNewButton_2.setBackground(new Color(255, 102, 51));
+								btnNewButton_2.setBorder(null);
 								
 										JButton btnNewButton_3 = new JButton("Print");
-										btnNewButton_3.setBounds(137, 299, 89, 30);
+										btnNewButton_3.setBounds(589, 299, 89, 30);
 										frame.getContentPane().add(btnNewButton_3);
 										btnNewButton_3.setForeground(Color.WHITE);
-										btnNewButton_3.setFont(new Font("Segoe UI", Font.BOLD, 11));
+										btnNewButton_3.setFont(new Font("Lato", Font.BOLD, 11));
 										btnNewButton_3.setBackground(Color.decode("#4447F5"));
 										btnNewButton_3.addActionListener(new ActionListener() {
 											public void actionPerformed(ActionEvent e) {
@@ -679,15 +720,15 @@ public class Reception {
 											}
 											}
 										});
-										btnNewButton_3.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+										btnNewButton_3.setBorder(null);
 										
 												JButton btnNewButton_2_1 = new JButton("Get Change");
-												btnNewButton_2_1.setBounds(255, 299, 96, 30);
+												btnNewButton_2_1.setBounds(138, 299, 96, 30);
 												frame.getContentPane().add(btnNewButton_2_1);
 												btnNewButton_2_1.setForeground(Color.WHITE);
-												btnNewButton_2_1.setFont(new Font("Segoe UI", Font.BOLD, 11));
+												btnNewButton_2_1.setFont(new Font("Lato", Font.BOLD, 11));
 												btnNewButton_2_1.setBackground(new Color(0, 153, 102));
-												btnNewButton_2_1.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+												btnNewButton_2_1.setBorder(null);
 														
 												btnNewButton_2_1.addActionListener(new ActionListener() {
 													public void actionPerformed(ActionEvent e) {
